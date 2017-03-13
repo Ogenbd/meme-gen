@@ -1,0 +1,143 @@
+.about {
+
+    background-color: var(--about-background-color);
+    
+}
+
+
+.hexagonAb {
+    position: relative;
+    width: 179px; 
+    height: 103.35px;
+    margin: 51.67px 0;
+    //background-image: url(../assets/img/ogen.jpg);
+    background-size: auto 183.5974px;
+    background-position: center;
+    border-left: solid 10px #333333;
+    border-right: solid 10px #333333;
+}
+
+.hexTopAb,
+.hexBottomAb {
+        position: absolute;
+        z-index: 1;
+        width: 126.57px;
+        height: 126.57px;
+        overflow: hidden;
+        -webkit-transform: scaleY(0.5774) rotate(-45deg);
+        -ms-transform: scaleY(0.5774) rotate(-45deg);
+        transform: scaleY(0.5774) rotate(-45deg);
+        background: inherit;
+        left: 16.21px;
+}
+
+/*counter transform the bg image on the caps*/
+.hexTopAb:after,
+.hexBottomAb:after {
+    content: "";
+    position: absolute;
+    width: 159.0000px;
+    height: 91.79869280115051px;
+    -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-45.8993px);
+    -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-45.8993px);
+    transform:          rotate(45deg) scaleY(1.7321) translateY(-45.8993px);
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    background: inherit;
+}   
+
+.hexTopAb {
+    top: -63.2861px;
+    border-top: solid 14.1421px #333333;
+    border-right: solid 14.1421px #333333;
+}
+
+.hexTopAb:after {
+    background-position: center top;
+}
+
+.hexBottomAb {
+    bottom: -63.2861px;
+    border-bottom: solid 14.1421px #333333;
+    border-left: solid 14.1421px #333333;
+}
+
+.hexBottomAb:after {
+    background-position: center bottom;
+}
+
+.hexagonAb:after {
+    content: "";
+    position: absolute;
+    top: 5.7735px;
+    left: 0;
+    width: 159.0000px;
+    height: 91.7987px;
+    z-index: 2;
+    background: inherit;
+}
+
+
+.ogen {
+    background-image: url("../assets/img/ogen.jpg");
+}
+
+.or {
+    background-image: url("../assets/img/or.png");
+    order:2
+
+}
+
+
+.p1 {
+  color:black;
+  line-height: 0.9cm;
+  padding: 15px;
+  width: 70%;
+  flex-shrink: 1;
+}
+.tumbrow {
+     display: flex;
+    align-items: flex-end;
+    padding: 5px;
+    order:3;
+}
+.tumb {
+    width: 25px;
+    height: 25px;
+    margin: 1px;
+    cursor: pointer;
+    //background-color: red;
+ 
+
+}
+
+
+
+@media screen and (max-width:750px){
+
+article {
+  flex-wrap: wrap;
+//   margin: 0 10%;
+  width: 100%;
+  
+
+
+
+
+    .p1 {
+    width: 100%;
+    color:black;
+    line-height: 0.9cm;
+    // padding: 90px;
+    }
+    .or{
+        order: 1;
+    }
+
+    .p2 {
+        order:2;
+    }
+    }
+}

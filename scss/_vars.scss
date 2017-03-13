@@ -1,0 +1,18 @@
+$container-width: 1063px;
+$mobile-breakpoint: 642px;
+
+:root {
+  /* Layout */
+  --container-width: $container-width;
+  --inner-container-width: 900px;
+  /* Fonts */
+  --primary-font: Playfair;
+  --secondary-font: Ubuntu;
+  /* Colors */
+  --main-color: #626262;
+  --sections-bg: #f0f0f0;
+  --about-background-color:#2eb398;
+  --nav-background-color: #323232;
+}
+
+

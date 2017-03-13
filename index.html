@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+
+<body onload="appInit()">
+<!--the main container-->
+    <main class="main">
+        <!--the navigation bar-->
+        <ul class="main-nav" id="nav">
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" onclick="burgerMenu()">&#9776;</a>
+            </li>
+        </ul>
+
+        <section class="gallery">
+            <ul id="hexGrid" class="innerGallery">
+        </section>
+
+        <section class="meme-editor flex column align-center justify-center">
+            <a name="editor"></a>
+            <div class="top-text">
+                <div class="control is-grouped flex flex-wrap justify-center">
+                        <p class="control">
+                            <span class="select is-focused is-primary">
+                                <select class="is-focused is-primary" oninput="changeFont('top', this.value)">
+                                    <option value="impact">Impact</option>
+                                    <option value="ariel">Ariel</option>
+                                    <option value="playfair">playfair</option>
+                                </select>
+                            </span>
+                        </p>
+                    <p class="control">
+                        <input class="button is-outlined is-primary color-picker" type="color" oninput="changeFontColor('top', this.value)" value="#ffffff">
+                    </p>
+                    <p class="control has-addons">
+                        <a class="button is-primary is-outlined" onclick="changeFontSize('top', '+')">
+                            <span class="icon is-small">
+                                <i class="fa fa-plus"></i>
+                            </span>
+                        </a>
+                        <a class="button is-primary is-outlined" onclick="changeFontSize('top', '-')">
+                            <span class="icon is-small">
+                                <i class="fa fa-minus"></i>
+                            </span>
+                        </a>
+                    </p>
+                    <p class="control has-addons">
+                        <a class="button is-primary is-outlined" onclick="alignText('top', 'left', 5)">
+                            <span class="icon is-small">
+                                <i class="fa fa-align-left"></i>
+                            </span>
+                        </a>
+                        <a class="button is-primary is-outlined" onclick="alignText('top', 'center', gCanvas.width / 2)">
+                            <span class="icon is-small">
+                                <i class="fa fa-align-center"></i>
+                            </span>
+                        </a>
+                        <a class="button is-primary is-outlined" onclick="alignText('top', 'right', gCanvas.width - 5)">
+                            <span class="icon is-small">
+                                <i class="fa fa-align-right"></i>
+                            </span>
+                        </a>
+                    </p>
+                </div>
+                <input class="input is-primary top-text-input" type="text" placeholder="Top Text">
+            </div>
+
+            <canvas class="canvas img-responsive" width="1000" height="1000">no image</canvas>
+
+            <div class="bottom-text">
+                <input class="input is-primary bottom-text-input" type="text" placeholder="Bottom Text">
+                    <div class="control is-grouped">
+                        <p class="control">
+                            <span class="select is-focused is-primary">
+                                <select class="is-focused is-primary" oninput="changeFont('bottom', this.value)">
+                                    <option value="impact">Impact</option>
+                                    <option value="ariel">Ariel</option>
+                                    <option value="playfair">playfair</option>
+                                </select>
+                            </span>
+                        </p>
+                    <p class="control">
+                        <input class="button is-outlined is-primary color-picker" type="color" oninput="changeFontColor('bottom', this.value)" value="#ffffff">
+                    </p>
+                    <p class="control has-addons">
+                        <a class="button is-primary is-outlined" onclick="changeFontSize('bottom', '+')">
+                            <span class="icon is-small">
+                                <i class="fa fa-plus"></i>
+                            </span>
+                        </a>
+                        <a class="button is-primary is-outlined" onclick="changeFontSize('bottom', '-')">
+                            <span class="icon is-small">
+                                <i class="fa fa-minus"></i>
+                            </span>
+                        </a>
+                    </p>
+                    <p class="control has-addons">
+                        <a class="button is-primary is-outlined" onclick="alignText('bottom', 'left', 5)">
+                            <span class="icon is-small">
+                                <i class="fa fa-align-left"></i>
+                            </span>
+                        </a>
+                        <a class="button is-primary is-outlined" onclick="alignText('bottom', 'center', gCanvas.width / 2)">
+                            <span class="icon is-small">
+                                <i class="fa fa-align-center"></i>
+                            </span>
+                        </a>
+                        <a class="button is-primary is-outlined" onclick="alignText('bottom', 'right', gCanvas.width - 5)">
+                            <span class="icon is-small">
+                                <i class="fa fa-align-right"></i>
+                            </span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!--keep in touch-->
+        <section class="flex flex-wrap">
+            <a name="getintouch"></a>
+            <div class="form-input">
+                <h1 class="getIntouch"> get in touch! </h1>
+                <h4 class="getIntouch">In order to get in touch use the form below </h4>
+                <form id= "contact" class ="flex column form-group form-control">
+                    <input type="text" class= "colorForm" placeholder="Name">
+                    <input type="email" class= "colorForm" placeholder="E-mail" name="email">
+                    <input type="text" class= "colorForm" placeholder="Subject">
+                    <input type="text" class="textForm colorForm" placeholder="Text">
+                    <input type="submit" class="subButton" value="Send" onclick="sendLocalStorage();return false;">
+                </form>
+            </div>
+            <div class="form-info flex column justify-center">
+                <div class= "margin-top">Lorem ipsum dolor sit amet, adhuc commodo ut his,
+                     vim vocibus mnesarchum efficiantur id. Eum et errem consequat. 
+                     Duis nostrud ei quo, odio persius in eum. Movet nonumes ex usu, eam bonorum fabulas civibus et.</div>
+                <div class="flex padding2">
+                    <div><img src = "assets/img/map.png"></div>
+                    <div class= "padding">nowhere st. somewhere, dushbegistan</div>
+                </div> 
+                <div flex class= "flex padding2">
+                    <div><img src = "assets/img/phone.png"></div>
+                    <div>+3345678635</div>
+                </div> 
+                <div flex class="flex padding2">
+                    <div><img src = "assets/img/email.png"></div>
+                    <!--<div>whatwhat@yahoo.com</div>-->
+                </div>                 
+            </div>
+        </section>
+        <!--the footer-->
+        <footer>
+            all rights reserved to ogen & or inc.
+        </footer>
+        
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
+

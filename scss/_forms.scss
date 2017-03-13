@@ -1,0 +1,72 @@
+::-webkit-input-placeholder {
+  color: #e0e0e0;
+  font-size: rem(14px);
+  font-family: var(--primary-font);
+}
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid #000;
+  //background-color: #454545;
+  width: 100%;
+  padding: 0.5em 0.2em;
+}
+
+
+.form-group {
+  margin: 1em 0;
+}
+
+.form-input{
+    width: 80%;
+    background-color:  #323232;;
+}
+
+.form-info {
+  width: 20%;
+  background-color:  #323232;
+  padding: 10px;
+  
+}
+.margin-top {
+margin-top: 178px;
+}
+
+.getIntouch{
+  color: #e0e0e0;
+  margin:40px;
+}
+
+.subButton {
+  width: 50px;
+  color: black;
+  margin: 15px;
+  background-color: lightgreen;
+  cursor: pointer;
+}
+
+
+.textForm {
+    height:200px;
+}
+
+.colorForm {
+    background-color: #454545;
+    color: #e0e0e0;
+    margin:10px;
+}
+@media screen and (max-width:700px){
+
+  .form-input{
+    width: 100%;
+  }
+
+  .form-info {
+  width: 100%;
+  flex-wrap: wrap; 
+  }
+
+  .margin-top {
+    margin-top: 0px;
+  }
+}
